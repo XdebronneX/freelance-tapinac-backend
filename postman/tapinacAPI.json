@@ -1,0 +1,1974 @@
+{
+	"info": {
+		"_postman_id": "6875f65a-ea20-4ef8-bf00-79e4f89bc292",
+		"name": "tapinac",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36625416",
+		"_collection_link": "https://tapinacteam.postman.co/workspace/tapinacTeam-Workspace~4342293e-b92b-4e59-89db-ed15907d7962/collection/36625416-6875f65a-ea20-4ef8-bf00-79e4f89bc292?action=share&source=collection_link&creator=36625416"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "students",
+					"item": [
+						{
+							"name": "all students",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/studentList?keyword=123456789",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"studentList"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "123456789"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add student",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lrn\": \"123456789\",\r\n    \"firstName\": \"std1\",\r\n    \"lastName\": \"sdt1\",\r\n    \"middleName\": \"s\",\r\n    \"suffix\": \"\",\r\n    \"sex\": \"Male\",\r\n    \"birthDate\": \"1999-10-10\",\r\n    \"age\": 19,\r\n    \"religiousAffiliation\": \"christian\",\r\n    \"completeAddress\": {\r\n        \"houseNo\": \"123\",\r\n        \"barangay\": \"Santa Rosa\",\r\n        \"city\": \"Laguna\",\r\n        \"province\": \"Laguna\"\r\n    },\r\n    \"parents\": {\r\n        \"fatherInfo\": {\r\n            \"firstName\": \"Mark\",\r\n            \"middleName\": \"Anna\",\r\n            \"lastName\": \"Doe\"\r\n        },\r\n        \"motherInfo\": {\r\n            \"firstName\": \"Jane\",\r\n            \"middlenName\": \"Anna\",\r\n            \"lastName\": \"Doe\"\r\n            \r\n        }\r\n    },\r\n    // \"guardianInfo\": {\r\n    //     \"firstName\": \"Anna\",\r\n    //     \"middleName\": \"Dayot\",\r\n    //     \"lastName\": \"Pascua\",\r\n    //     \"relationship\": \"Aunt\"\r\n    // },\r\n    \"contactNumber\": \"09123456789\",\r\n    \"remarks\": \"New student for the academic year\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/students",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update student",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lrn\": \"123456789\",\r\n    \"firstName\": \"ayos\",\r\n    \"middleName\": \"s\",\r\n    \"lastName\": \"nato\",\r\n    \"suffix\": \"\",\r\n    \"sex\": \"Male\",\r\n    \"birthDate\": \"2000-10-10\",\r\n    \"age\": 19,\r\n    \"religiousAffiliation\": \"christian\",\r\n    \"completeAddress\": {\r\n        \"houseNo\": \"123\",\r\n        \"barangay\": \"Santa Rosa\",\r\n        \"city\": \"Laguna\",\r\n        \"province\": \"Laguna\"\r\n    },\r\n    \"parents\": {\r\n        \"fatherInfo\": {\r\n            \"firstName\": \"Mark\",\r\n            \"middleName\": \"Anna\",\r\n            \"lastName\": \"Doe\"\r\n        },\r\n        \"motherInfo\": {\r\n            \"firstName\": \"Jane\",\r\n            \"lastName\": \"Doe\"\r\n        }\r\n    },\r\n    \"contactNumber\": \"09123456789\",\r\n    \"remarks\": \"New student for the academic year\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/students/6730c1ee2fc9c3ea6e0e384e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"6730c1ee2fc9c3ea6e0e384e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list of active students",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/students/active",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list of inactive students",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/students/inactive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"inactive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/students/6730c1ee2fc9c3ea6e0e384e/deactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"6730c1ee2fc9c3ea6e0e384e",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/students/6730c1ee2fc9c3ea6e0e384e/reactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"6730c1ee2fc9c3ea6e0e384e",
+										"reactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single student",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/singleStudent/6730c1ee2fc9c3ea6e0e384e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"singleStudent",
+										"6730c1ee2fc9c3ea6e0e384e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "form one",
+					"item": [
+						{
+							"name": "create school details",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"schoolName\": \"iris goo goo\",\r\n    \"schoolId\": \"12345\",\r\n    \"district\": \"Sample District\",\r\n    \"division\": \"Sample Division\",\r\n    \"region\": \"Sample Region\",\r\n    \"semester\": \"1st semester\",\r\n    \"schoolYear\": \"2023-2024\",\r\n    \"gradeLevel\": \"12\",\r\n    \"trackStrand\": \"Gas\",\r\n    \"section\": \"Section googoo\",\r\n    // \"sectionId\": \"675bd6e246371e7ab0de89c5\",\r\n    \"course\": \"\",\r\n    \"students\": []\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/admin/formone",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"formone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add students",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"students\": [\r\n        {\r\n            \"lrn\": \"88888888\",\r\n            \"firstName\": \"wowoww\",\r\n            \"middleName\": \"Da\",\r\n            \"lastName\": \"Zombie\",\r\n            \"sex\": \"Male\",\r\n            \"birthDate\": \"2005-04-15\",\r\n            \"age\": 19,\r\n            \"religiousAffiliation\": \"Catholic\",\r\n            \"completeAddress\": {\r\n                \"houseNo\": \"456\",\r\n                \"barangay\": \"Santa Rosa\",\r\n                \"city\": \"Laguna\",\r\n                \"province\": \"Laguna\"\r\n            },\r\n            // \"parents\": {\r\n            //     \"fatherInfo\": {\r\n            //         \"firstName\": \"John\",\r\n            //         \"middleName\": \"Michael\",\r\n            //         \"lastName\": \"Doe\"\r\n            //     },\r\n            //     \"motherInfo\": {\r\n            //         \"firstName\": \"Mary\",\r\n            //         \"middleName\": \"Ann\",\r\n            //         \"lastName\": \"Doe\"\r\n            //     }\r\n            // },\r\n            \"guardianInfo\": {\r\n                \"firstName\": \"Emily\",\r\n                \"middleName\": \"Claire\",\r\n                \"lastName\": \"Doe\",\r\n                \"relationship\": \"Aunt\"\r\n            },\r\n            \"contactNumber\": \"09123456790\",\r\n            \"remarks\": \"New student for the academic year\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/admin/formone/students/675ec193abb43b951f070b91",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"formone",
+										"students",
+										"675ec193abb43b951f070b91"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "assign adviser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/assignAdviser/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"assignAdviser",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single form",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/admin/formone/students/6778fcd3f2f39091bd689e71",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"formone",
+										"students",
+										"6778fcd3f2f39091bd689e71"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update form one",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"schoolName\": \"Sunrise High School\",\r\n    \"schoolId\": \"SHS-1023\",\r\n    \"district\": \"Central District\",\r\n    \"division\": \"Metro Division\",\r\n    \"region\": \"Region IV-A\",\r\n    \"semester\": \"2nd Semester\",\r\n    \"schoolYear\": \"2024-2025\",\r\n    \"gradeLevel\": \"Grade 11\",\r\n    \"trackStrand\": \"GAS\",\r\n    \"section\": \"A\",\r\n    \"course\": \"\",\r\n     \"students\": [\r\n        {\r\n            \"lrn\": \"55555555\",\r\n            \"firstName\": \"yumingotttt\",\r\n            \"middleName\": \"Doe\",\r\n            \"lastName\": \"Manzano\",\r\n            \"sex\": \"Female\",\r\n            \"birthDate\": \"2005-04-15\",\r\n            \"age\": 19,\r\n            \"religiousAffiliation\": \"Catholic\",\r\n            \"completeAddress\": {\r\n                \"houseNo\": \"456\",\r\n                \"barangay\": \"Santa Rosa\",\r\n                \"city\": \"Laguna\",\r\n                \"province\": \"Laguna\"\r\n            },\r\n            \"guardianInfo\": {\r\n                \"firstName\": \"Emily\",\r\n                \"middleName\": \"Claire\",\r\n                \"lastName\": \"Doe\",\r\n                \"relationship\": \"Aunt\"\r\n            },\r\n            \"contactNumber\": \"09123456790\",\r\n            \"remarks\": \"New student for the academic year\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/admin/formone/6746ef49eb0e081a91f12a1a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"formone",
+										"6746ef49eb0e081a91f12a1a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/admin/formone/deactivate/675bd6f846371e7ab0de89c9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"formone",
+										"deactivate",
+										"675bd6f846371e7ab0de89c9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/admin/formone/restore/675bd6f846371e7ab0de89c9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"formone",
+										"restore",
+										"675bd6f846371e7ab0de89c9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "form list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/formone",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"formone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "archive sections",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/formone",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"formone"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "reactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/672b2bbd3acc19461c321ae8/reactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"672b2bbd3acc19461c321ae8",
+										"reactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/672b2bbd3acc19461c321ae8/deactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"672b2bbd3acc19461c321ae8",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/userlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"userlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "archive users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/userlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"userlist"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "class record",
+					"item": [
+						{
+							"name": "first quarter",
+							"item": [
+								{
+									"name": "set possible scores in first quarter",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"possibleScores\": {\r\n    \"writtenWorks\": [40, 35, 35, 35, 40, 35,40,35],\r\n    \"performanceTask\": [45, 45, 45, 45],\r\n    \"quarterlyGrade\": 100\r\n     }\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/api/v1/update/firstQuarter/possibleScores/675ec4ea7ad44944484d8906",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"api",
+												"v1",
+												"update",
+												"firstQuarter",
+												"possibleScores",
+												"675ec4ea7ad44944484d8906"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "set scores of student in first quarter",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"studentId\": \"675aa0b2b2c4349d7db63cf8\",\r\n  \"firstQuarterData\": {\r\n    \"scoreRecords\": {\r\n      \"writtenWorks\": {\r\n        \"scores\": [20, 20, 27, 23, 15, 15,15,15]\r\n      },\r\n      \"performanceTask\": {\r\n        \"scores\": [20, 20, 30, 25]\r\n      },\r\n      \"quarterlyAssessment\": {\r\n        \"score\": 98\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/api/v1/update/firstQuarter/675aa0b2b2c4349d7db63cf7",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"api",
+												"v1",
+												"update",
+												"firstQuarter",
+												"675aa0b2b2c4349d7db63cf7"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "second quarter",
+							"item": [
+								{
+									"name": "set possible scores in second quarter",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"possibleScores\": {\r\n    \"writtenWorks\": [40, 35, 35, 35,45],\r\n    \"performanceTask\": [45,45,45,45,45],\r\n    \"quarterlyGrade\": 100\r\n     }\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/api/v1/update/secondQuarter/possibleScores/675ec4ea7ad44944484d8906",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"api",
+												"v1",
+												"update",
+												"secondQuarter",
+												"possibleScores",
+												"675ec4ea7ad44944484d8906"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "set scores of student in first quarter",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"studentId\": \"675c34c3f16c57c957b085ad\",\r\n  \"secondQuarterData\": {\r\n     \"scoreRecords\": {\r\n      \"writtenWorks\": {\r\n        \"scores\": [20, 20, 35, 25,32,35,35,35,40,40]\r\n      },\r\n      \"performanceTask\": {\r\n        \"scores\": [20, 20, 35, 25,34,35,30,30,30,30]\r\n      },\r\n      \"quarterlyAssessment\": {\r\n        \"score\": 98\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:4000/api/v1/update/secondQuarter/675aa0b2b2c4349d7db63cf7",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"api",
+												"v1",
+												"update",
+												"secondQuarter",
+												"675aa0b2b2c4349d7db63cf7"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "add new",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"subject\": \"simpleplan\",\r\n  \"track\": \"Core Subject\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/classRecord/675ec193abb43b951f070b91",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"classRecord",
+										"675ec193abb43b951f070b91"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "teacher section",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/my/subjects/675bd6e246371e7ab0de89c5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"my",
+										"subjects",
+										"675bd6e246371e7ab0de89c5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/classRecords/673c2a6fa4e543dcf6f5eb75/reactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"classRecords",
+										"673c2a6fa4e543dcf6f5eb75",
+										"reactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/classRecords/67593707eb0b05694bdcac6d/deactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"classRecords",
+										"67593707eb0b05694bdcac6d",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin section list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/section/list/673c98f31e609d5f440f72e6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"section",
+										"list",
+										"673c98f31e609d5f440f72e6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all section class records",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/allSection/classRecords",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"allSection",
+										"classRecords"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "final records",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/final/classRecords/675ec193abb43b951f070b91",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"final",
+										"classRecords",
+										"675ec193abb43b951f070b91"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update class record",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"subject\": \"History\",\r\n     \"track\": \"Core Subject\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/update/singleEcr/673c995f1e609d5f440f7301",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"update",
+										"singleEcr",
+										"673c995f1e609d5f440f7301"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single class record",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/singleEcr/675c3597d955aa7a136c85fe",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"singleEcr",
+										"675c3597d955aa7a136c85fe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single scores",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/singleScores/675c3597d955aa7a136c85fe/12333333",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"singleScores",
+										"675c3597d955aa7a136c85fe",
+										"12333333"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "class card",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/classCard/675ec193abb43b951f070b91/88888888",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"classCard",
+										"675ec193abb43b951f070b91",
+										"88888888"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "set subject",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\": \"Math\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/add/firstQuarter/subject/67529bb3450fa81939ae448d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"add",
+										"firstQuarter",
+										"subject",
+										"67529bb3450fa81939ae448d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "arrange",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"newArrangement\": [\r\n    { \"id\": \"675ec1b8abb43b951f070b9b\", \"order\": 1 },\r\n    { \"id\": \"675ec4ea7ad44944484d8906\", \"order\": 2 }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/arrange-subjects",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"arrange-subjects"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "archive class records",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/classRecords/6777b666200ab2ee78d63888/inactive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"classRecords",
+										"6777b666200ab2ee78d63888",
+										"inactive"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "form137",
+					"item": [
+						{
+							"name": "create grade 11",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/form137/6777b666200ab2ee78d63888/01010101",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"form137",
+										"6777b666200ab2ee78d63888",
+										"01010101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create grade 12",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/form137/6777b666200ab2ee78d63888/01010101",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"form137",
+										"6777b666200ab2ee78d63888",
+										"01010101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "active form",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/forms137/active",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"forms137",
+										"active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inactive form",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/forms137/inactive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"forms137",
+										"inactive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single form137",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/form137//deactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"form137",
+										"",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reactivate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/form137/01010101/reactivate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"form137",
+										"01010101",
+										"reactivate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "document",
+					"item": [
+						{
+							"name": "admin",
+							"item": [
+								{
+									"name": "deactivate",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:4000/api/v1/document/677bc114d9211da6b77048dd/deactivate",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"api",
+												"v1",
+												"document",
+												"677bc114d9211da6b77048dd",
+												"deactivate"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "archive documents",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "restore",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:4000/api/v1/document/677bc114d9211da6b77048dd/reactivate",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "4000",
+											"path": [
+												"api",
+												"v1",
+												"document",
+												"677bc114d9211da6b77048dd",
+												"reactivate"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "active documents",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "single document",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "create document",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "department",
+											"value": "Human Resources",
+											"type": "text"
+										},
+										{
+											"key": "remarks",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "documentName",
+											"type": "file",
+											"src": "/E:/internship/2024-SIT-EvaluationForm-Meatworld-Pascua.doc"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/document",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"document"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "download file",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "update document",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "documentStatus",
+											"value": "Revise",
+											"type": "text"
+										},
+										{
+											"key": "remarks",
+											"value": "Revised",
+											"type": "text"
+										},
+										{
+											"key": "documentName",
+											"type": "file",
+											"src": "/E:/internship/2024-SIT-EvaluationForm-Meatworld-Pascua.doc"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/document/677aaa826b499225171d64eb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"document",
+										"677aaa826b499225171d64eb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single document",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get documents",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "received document",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/document/677ba565ebcf28db6c01ed6a/received",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"document",
+										"677ba565ebcf28db6c01ed6a",
+										"received"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "super admin",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"boomber\",\r\n    \"lastName\": \"granade\",\r\n    \"middleName\": \"O\",\r\n    // \"suffix\": \"Jr.\",\r\n    \"password\": \"admin123\",\r\n    \"role\": \"teacher\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/672b2bda6c8898aa5e2ba626",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"672b2bda6c8898aa5e2ba626"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"firstName\": \"jonjon\",\r\n    // \"middleName\": \"A.\",\r\n    // \"lastName\": \"Doenut\",\r\n    \"role\": \"hr\",\r\n    \"password\": \"admin12345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/update/users/672b2bda6c8898aa5e2ba626",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"update",
+								"users",
+								"672b2bda6c8898aa5e2ba626"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"debronne.pascua\",\r\n    \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "fouly",
+							"type": "text"
+						},
+						{
+							"key": "middleName",
+							"value": "O",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "kulit",
+							"type": "text"
+						},
+						{
+							"key": "suffix",
+							"value": "jr",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"value": "https://res.cloudinary.com/dxr8sfqci/image/upload/v1731494734/avatars/tvjhbekqxsazz5zwjlqr.jpg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/me/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"me",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "inherit"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmI0MmEwNDNlNjQ4Nzg1MzU4MTUwZiIsImlhdCI6MTczNTkwOTcxMCwiZXhwIjoxNzM2NTE0NTEwfQ.GZrKZWWEfKofNJvDXz-aKyUXh6UtPpGYxu5_BDpyStI",
+			"type": "string"
+		}
+	]
+}
