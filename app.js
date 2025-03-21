@@ -25,7 +25,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Routes
 app.use('/api/v1', students);
 app.use('/api/v1', formones);
 app.use('/api/v1', users);
